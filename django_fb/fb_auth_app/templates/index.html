@@ -3,7 +3,22 @@
 {% block content %}
 <div class="row">
   <div class="col-sm-12">
-    <h4 class="text-center">Welcome {{ user.username }}</h4>
+    <h4 class="text-center">Welcome {{ user.first_name }} {{ user.last_name }}</h4>
+  </div>
+  {% for ass in backends.associated %}
+    {% if ass.provider == 'facebook' %}
+      <div class="col-md-6 text-center">
+          <img src="{{ ass.extra_data.picture.data.url }}" alt="" width="150" height="150" style="border-radius: 50%">
+      </div>
+      <div class="col-md-6">                 
+          <p> Name:  {{ ass.extra_data.name }} </p>
+      </div>
+    {% endif %}
+  {% endfor %}
+  <div class="col-sm-12 text-center">
+    <button class="btn btn-danger">
+      <a href="{% url 'logout' %}">Logout</a>
+    </button>
   </div>
 </div>
 {% endblock %}
