@@ -1,0 +1,13 @@
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.my-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}

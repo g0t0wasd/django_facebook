@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Sign in {% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary my-btn col-md-6 offset-md-3">
+      <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+    </button>
+  </div>
+</div>
+{% endblock %}
